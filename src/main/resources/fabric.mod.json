@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "terrarianplatforms",
+  "version": "${version}",
+
+  "name": "Terrarian Platforms",
+  "description": "Adds platforms from Terraria into Minecraft",
+  "authors": [
+    "Hadeles_My_Mans"
+  ],
+  "contact": {
+    "homepage": "https://asdf.org",
+    "sources": ""
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.fabricmc.terrarianplatforms.TerrarianPlatformsMod"
+    ]
+  },
+  "mixins": [
+    "modid.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
