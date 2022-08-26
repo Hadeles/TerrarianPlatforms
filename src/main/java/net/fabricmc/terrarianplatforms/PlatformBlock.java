@@ -124,7 +124,7 @@ implements Waterloggable {
     private static VoxelShape getCollisionShapeForReal(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         if (context instanceof EntityShapeContext) {
             Entity entity = ((EntityShapeContext)context).getEntity();
-            if (entity != null && entity.getClass().getName().contains("Hookshot")) {
+            if (entity != null && entity.getClass().getName().contains("hookshot")) {
                 // Hookshots can use platforms.
                 return COLLISION_SHAPE;
             }
