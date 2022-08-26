@@ -21,7 +21,6 @@ implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("modid");
 
-    public static final Item MUD_BALL = new Item(new Item.Settings().group(ItemGroup.MISC));
 	public static final Block PLATFORM_BLOCK = new PlatformBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.SPRUCE_BROWN).strength(1.0f, 4.5f).nonOpaque().noCollision().sounds(BlockSoundGroup.WOOD).dynamicBounds());
 	public static final Item PLATFORM_ITEM = new PlatformItem(PLATFORM_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
 
@@ -30,10 +29,6 @@ implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-
-		LOGGER.info("Hello from Ben and Scott's first mod!");
-
-		Registry.register(Registry.ITEM, new Identifier("terrarianplatforms", "mud_ball"), MUD_BALL);
 
 		Registry.register(Registry.BLOCK, new Identifier("terrarianplatforms", "platform"), PLATFORM_BLOCK);
 		Registry.register(Registry.ITEM, new Identifier("terrarianplatforms", "platform"), PLATFORM_ITEM);
