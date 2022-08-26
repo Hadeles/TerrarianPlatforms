@@ -19,7 +19,7 @@ implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger("modid");
+	public static final Logger LOGGER = LoggerFactory.getLogger("terrarianplatforms");
 
 	public static final Block PLATFORM_BLOCK = new PlatformBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.SPRUCE_BROWN).strength(1.0f, 4.5f).nonOpaque().noCollision().sounds(BlockSoundGroup.WOOD).dynamicBounds());
 	public static final Item PLATFORM_ITEM = new PlatformItem(PLATFORM_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
