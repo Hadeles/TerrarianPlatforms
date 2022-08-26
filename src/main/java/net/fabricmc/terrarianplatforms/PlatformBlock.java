@@ -105,7 +105,7 @@ implements Waterloggable {
         java.lang.StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
         for (StackTraceElement element : stackTrace) {
             if (element.getMethodName() == "render" || element.getMethodName() == "raycast") {
-                return this.getRaycastShape(state, world, pos);
+                return VoxelShapes.empty();
             } else if (
                 element.getMethodName() == "shouldSuffocate" ||
                 element.getMethodName() == "wouldCollideAt" ||
@@ -121,7 +121,7 @@ implements Waterloggable {
         return getCollisionShapeForReal(state, world, pos, context);
     }
 
-    private VoxelShape getCollisionShapeForReal(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    private static VoxelShape getCollisionShapeForReal(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         if (context instanceof EntityShapeContext) {
             Entity entity = ((EntityShapeContext)context).getEntity();
             if (entity != null && entity.getClass().getName().contains("Hookshot")) {
