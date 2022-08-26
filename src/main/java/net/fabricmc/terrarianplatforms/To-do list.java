@@ -11,7 +11,8 @@
      * 
      * 4 Make mod compatibility with BoMD (In case the bosses do not understand platforms.)
      * 
-     * 
+     * 5 On the released .jar, mobs fail to see through platforms. Wither/zombie cannot see pig/villager directly below.
+     *   This does not occur in local debug mode.
      * 
      * 
      * 
