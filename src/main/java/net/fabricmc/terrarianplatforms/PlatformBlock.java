@@ -30,7 +30,6 @@ import net.minecraft.item.Item;
 
 /*
  * Access widened by fabric-transitive-access-wideners-v1 to accessible
- * Scott here, I moved the to-do list to To-do list.java.
  */
 public class PlatformBlock
 extends Block
@@ -91,15 +90,6 @@ implements Waterloggable {
         return state;
     }
 
-    /* Message from: Ben
-     * This is called by the *raycasting* code too.
-     * 
-     * Message from: Scott
-     * please use the format ("message from"":""name of person""down 1 line""message") when making comments.
-     * can we make this dependent on  head pos of mobs, meaning that all platforms at (head pos) or higher do not count as solid for mobs,
-     * nor as something they can pathfind through, such that they see it as something they can pathfind through as if it were air when it is
-     * at their head pos or higher, allowing them to see through, walk through, and shoot through walls of platforms?
-     */
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         java.lang.StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
