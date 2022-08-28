@@ -139,6 +139,12 @@ public class PlatformBlock
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         java.lang.StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
         for (StackTraceElement element : stackTrace) {
+            if (element.getClassName().contains("hookshot")) {
+                // Hookshots can use platforms.
+                return COLLISION_SHAPE;
+            }
+        }
+        for (StackTraceElement element : stackTrace) {
             if (methodNameIsRender(element) || methodNameIsRaycast(element)) {
                 return VoxelShapes.empty();
             } else if (element.getMethodName() == "shouldSuffocate" ||
@@ -152,16 +158,15 @@ public class PlatformBlock
             }
         }
 
-        logStackTrace(stackTrace); // DEBUGGING
+        // logStackTrace(stackTrace); // DEBUGGING
 
         return getCollisionShapeForReal(state, world, pos, context);
     }
 
     private static void logStackTrace(StackTraceElement[] stackTrace) {
-        Logger logger = TerrarianPlatformsMod.LOGGER;
-        logger.info("Stack trace:");
+        TerrarianPlatformsMod.LOGGER.info("Stack trace:");
         for (StackTraceElement element : stackTrace) {
-            logger.info("  " + element.getClassName() + "::" + element.getMethodName());
+            TerrarianPlatformsMod.LOGGER.info("  " + element.getClassName() + "::" + element.getMethodName());
         }
     }
 
