@@ -48,8 +48,6 @@ public class PricelessMovesetClient implements ClientModInitializer {
 				}
 			}
 
-			dash.tick();
-
 			if (!dashKeybindIsPressedPreviousTick && (dashKeybind.isPressed() || dashKeybind.wasPressed())) {
 				client.player.sendMessage(Text.literal("Dash Keybind rising edge!"), false);
 
