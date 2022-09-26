@@ -2,36 +2,30 @@ package net.fabricmc.pricelessmoveset;
 
 import java.util.List;
 
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 
 // TODO: rename Dash to Dodge.
 
 public class Dash {
-    public static Identifier DASH_CHANNEL_ID = new Identifier("pricelessmoveset:dash_channel");
-
     // Allow other classes to change the cooldown. Dash.DASH_COOLDOWN_TIME
     public static long DASH_COOLDOWN_TIME = 40;
-    public static long DASH_INVULNERABILITY_TIME = 10;
+    public static long DASH_INVULNERABILITY_TIME = 15;
     public static long DASH_NO_DRAG_TIME = 1;
-    public static double SPEED = 0.6;
+    public static double SPEED = 0.7;
     public long lastDashUseTime = 0L;
     public boolean hasNoDrag = false;
     public boolean hasInvulnerability = false;
-    public net.minecraft.client.network.ClientPlayerEntity entity;
+    public net.minecraft.entity.LivingEntity entity;
 
-    Dash(net.minecraft.client.network.ClientPlayerEntity entity) {
+    Dash(net.minecraft.entity.LivingEntity entity) {
         this.entity = entity;
     }
 
     public void tick() {
         noDragTick();
-        invulnerabilityTick();
+        InvulnerabilityTick();
     }
 
     public void noDragTick() {
@@ -47,7 +41,7 @@ public class Dash {
         hasNoDrag = false;
     }
 
-    public void invulnerabilityTick() {
+    public void InvulnerabilityTick() {
         // Bail out if there is nothing to do.
         if (!hasInvulnerability) return;
 
@@ -60,15 +54,8 @@ public class Dash {
         if (time <= lastDashUseTime + DASH_INVULNERABILITY_TIME) return;
 
         // Remove invulerable state.
-        setInvulnerableDash(false);
-    }
-
-    public void setInvulnerableDash(boolean invulnerable) {
-        hasInvulnerability = invulnerable;
-        PacketByteBuf buf = PacketByteBufs.create();
-        buf.writeBoolean(invulnerable);
-        ClientPlayNetworking.send(DASH_CHANNEL_ID, buf);
-        entity.setInvulnerable(invulnerable);
+        entity.setInvulnerable( false);
+        hasInvulnerability = false;
     }
 
     // LivingEntity::tickCramming, but pullTowards instead of pushAway.
@@ -123,8 +110,9 @@ public class Dash {
         lastDashUseTime = time;
 
         entity.setNoDrag(true);
+        entity.setInvulnerable(true);
         hasNoDrag = true;
-        setInvulnerableDash(true);
+        hasInvulnerability = true;
 
         // Dodge according to keys pressed
         double yaw = entity.getYaw();  // Head yaw
@@ -148,7 +136,7 @@ public class Dash {
         // Convert yaw from degrees (above) to radians (below)
         yaw = yaw / 180.0 * Math.PI;
         double ySpeed;
-        if (this.entity.isOnGround()) {ySpeed = 0.2;} else {ySpeed = 0.0;}
+        if (this.entity.isOnGround()) {ySpeed = 0.25;} else {ySpeed = 0.0;}
         
         double groundSpeedHandicap;
         if (this.entity.isOnGround()) {groundSpeedHandicap = 1;} else {groundSpeedHandicap = 0.6;}
