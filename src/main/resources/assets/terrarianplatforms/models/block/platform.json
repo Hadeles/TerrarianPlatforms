@@ -1,157 +1,278 @@
 {
     "parent": "block/block",
     "textures": {
-      "particle": "terrarianplatforms:block/platform_top",
-      "top": "terrarianplatforms:block/platform_top",
-      "side": "terrarianplatforms:block/platform_side",
-      "bottom": "terrarianplatforms:block/platform_top"
+      "particle": "minecraft:block/acacia_planks",
+      "top": "minecraft:block/acacia_planks",
+      "side": "terrarianplatforms:block/acacia_platform"
     },
     "elements": [
       {
         "from": [
           0,
-          14,
+          15,
           0
         ],
         "to": [
-          14,
           16,
-          2
+          16,
+          4
         ],
         "faces": {
           "up": {
             "texture": "#top"
           },
           "north": {
-            "texture": "#side"
+            "texture": "#top",
+            "uv": [
+              16,
+              0,
+              0,
+              1
+            ]
           },
           "west": {
-            "texture": "#side"
-          },
-          "south": {
             "texture": "#side",
             "uv": [
+              4,
               0,
               0,
-              14,
-              2
+              1
+            ]
+          },
+          "east": {
+            "texture": "#side",
+            "uv": [
+              12,
+              0,
+              16,
+              1
+            ]
+          },
+          "south": {
+            "texture": "#top",
+            "uv": [
+              0,
+              3,
+              16,
+              4
             ]
           },
           "down": {
-            "texture": "#bottom"
+            "texture": "#top",
+            "uv": [
+              0,
+              4,
+              16,
+              0
+            ]
           }
         }
+        
       },
       {
         "from": [
-          2,
+          3,
           14,
-          14
+          0
         ],
         "to": [
-          16,
-          16,
+          4,
+          15,
           16
         ],
         "faces": {
           "up": {
-            "texture": "#top"
-          },
-          "east": {
-            "texture": "#side"
+            "texture": "#side",
+            "uv": [
+              4,
+              0,
+              5,
+              16
+            ]
           },
           "north": {
             "texture": "#side",
             "uv": [
-              2,
+              4,
               0,
+              5,
+              1
+            ]
+          },
+          "west": {
+            "texture": "#top",
+            "uv": [
+              0,
+              3,
               16,
-              2
+              4
+            ]
+          },
+          "east": {
+            "texture": "#top",
+            "uv": [
+              16,
+              3,
+              0,
+              4
             ]
           },
           "south": {
-            "texture": "#side"
+            "texture": "#side",
+            "uv": [
+              4,
+              15,
+              5,
+              16
+            ]
           },
           "down": {
-            "texture": "#bottom"
+            "texture": "#side",
+            "uv": [
+              4,
+              16,
+              5,
+              0
+            ]
           }
         }
       },
       {
         "from": [
-          14,
+          12,
           14,
           0
         ],
         "to": [
-          16,
-          16,
-          14
+          13,
+          15,
+          16
         ],
         "faces": {
           "up": {
-            "texture": "#top"
-          },
-          "north": {
-            "texture": "#side"
-          },
-          "east": {
             "texture": "#side",
             "uv": [
+              11,
               0,
+              12,
+              16
+            ]
+          },
+          "north": {
+            "texture": "#side",
+            "uv": [
+              11,
               0,
-              14,
-              2
+              12,
+              1
             ]
           },
           "west": {
-            "texture": "#side",
+            "texture": "#top",
             "uv": [
               0,
+              11,
+              16,
+              12
+            ]
+          },
+          "east": {
+            "texture": "#top",
+            "uv": [
+              16,
+              11,
               0,
-              14,
-              2
+              12
+            ]
+          },
+          "south": {
+            "texture": "#side",
+            "uv": [
+              11,
+              15,
+              12,
+              16
             ]
           },
           "down": {
-            "texture": "#bottom"
+            "texture": "#side",
+            "uv": [
+              11,
+              16,
+              12,
+              0
+            ]
           }
         }
       },
       {
         "from": [
           0,
-          14,
-          2
+          15,
+          12
         ],
         "to": [
-          2,
+          16,
           16,
           16
         ],
         "faces": {
           "up": {
-            "texture": "#top"
+            "texture": "#top",
+            "uv": [
+              0,
+              8,
+              16,
+              12
+            ]
           },
-          "south": {
-            "texture": "#side"
-          },
-          "east": {
-            "texture": "#side"
+          "north": {
+            "texture": "#top",
+            "uv": [
+              16,
+              8,
+              0,
+              9
+            ]
           },
           "west": {
             "texture": "#side",
             "uv": [
-              2,
-              0,
+              4,
               16,
-              2
+              0,
+              15
+            ]
+          },
+          "east": {
+            "texture": "#side",
+            "uv": [
+              12,
+              15,
+              16,
+              16
+            ]
+          },
+          "south": {
+            "texture": "#top",
+            "uv": [
+              0,
+              11,
+              16,
+              12
             ]
           },
           "down": {
-            "texture": "#bottom"
+            "texture": "#top",
+            "uv": [
+              0,
+              12,
+              16,
+              8
+            ]
           }
         }
       }
+      
     ]
   }

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "terrarianplatforms:block/oak_platform"
+    }
+  }
+}

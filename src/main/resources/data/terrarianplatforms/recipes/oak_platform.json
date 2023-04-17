@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        "   ",
+        "PSP"
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:stick"
+        },
+        "P": {
+            "item": "minecraft:oak_planks"
+        }
+},
+    "result": {
+        "item": "terrarianplatforms:oak_platform",
+        "count": 8
+    }
+}

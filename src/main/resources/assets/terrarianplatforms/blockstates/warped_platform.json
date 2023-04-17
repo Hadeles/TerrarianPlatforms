@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "terrarianplatforms:block/warped_platform"
+    }
+  }
+}

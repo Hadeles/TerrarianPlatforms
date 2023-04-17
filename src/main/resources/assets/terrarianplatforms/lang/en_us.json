@@ -1,3 +1,12 @@
 {
-"block.terrarianplatforms.platform": "Platform"
+"block.terrarianplatforms.platform": "Platform",
+"block.terrarianplatforms.acacia_platform": "Acacia Platform",
+"block.terrarianplatforms.birch_platform": "Birch Platform",
+"block.terrarianplatforms.crimson_platform": "Crimson Platform",
+"block.terrarianplatforms.dark_oak_platform": "Dark Oak Platform",
+"block.terrarianplatforms.jungle_platform": "Jungle Platform",
+"block.terrarianplatforms.mangrove_platform": "Mangrove Platform",
+"block.terrarianplatforms.oak_platform": "Oak Platform",
+"block.terrarianplatforms.spruce_platform": "Spruce Platform",
+"block.terrarianplatforms.warped_platform": "Warped Platform"
 }
